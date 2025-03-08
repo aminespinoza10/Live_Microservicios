@@ -1,2 +1,5 @@
-# Live_Microservicios
-En este repositorio podrás ver todo lo que haremos en el Live de microservicios.
+# Proyecto de microservicios
+
+Aquí tienes la arquitectura que vamos a utilizar.
+
+![Arquitectura](./docs/assets/arquitectura.png)
