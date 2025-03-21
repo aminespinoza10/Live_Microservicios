@@ -167,9 +167,7 @@ echo "-----------------------------------"
 echo "Docker compose creado correctamente"
 echo "-----------------------------------"
 
-az group create --name "liveMicroservices" --location "East US 2"
-az servicebus namespace create --name "liveSbNamesapce" --resource-group "liveMicroservices" --location "East US 2" --sku "Standard"
-az servicebus queue create --name "ageQueue" --namespace-name "liveSbNamesapce" --resource-group "liveMicroservices"
+
 
 echo "-----------------------------------"
 echo "Grupo de recursos y Service Bus creado correctamente"
