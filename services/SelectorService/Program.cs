@@ -1,6 +1,6 @@
 ﻿using Azure.Messaging.ServiceBus;
 using Microsoft.Extensions.Configuration;
-
+/*
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -22,10 +22,10 @@ processor.ProcessErrorAsync += args =>
     return Task.CompletedTask;
 };
 
-await processor.StartProcessingAsync();
+await processor.StartProcessingAsync();*/
 
 Console.WriteLine("Listening for messages on the queue...");
 Console.ReadLine();
 
-await processor.StopProcessingAsync();
+//await processor.StopProcessingAsync();
 
