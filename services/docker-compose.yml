@@ -1,0 +1,28 @@
+
+services:
+  endpointservice:
+    image: endpointservice
+    build:
+      context: ./EndpointService
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+
+  selectorservice:
+    image: selectorservice
+    build:
+      context: ./SelectorService
+      dockerfile: Dockerfile
+
+#  databaseservice:
+#    image: databaseservice
+#    build:
+#      context: ./DatabaseService
+#      dockerfile: Dockerfile
+
+#  cacheservice:
+#    image: cacheservice
+#    build:
+#      context: ./CacheService
+#      dockerfile: Dockerfile
+

@@ -49,7 +49,7 @@ ENTRYPOINT [\"dotnet\", \"EndpointService.dll\"]
         "SelectorService")
           dotnet new console -o "SelectorService"
           cd "SelectorService"
-          dotnet add package Microsoft.Azure.ServiceBus
+          dotnet add package Azure.Messaging.ServiceBus
           dotnet add package Microsoft.Extensions.Configuration.Json
           echo "FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build 
 WORKDIR /src
