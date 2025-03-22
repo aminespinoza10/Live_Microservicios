@@ -50,6 +50,7 @@ ENTRYPOINT [\"dotnet\", \"EndpointService.dll\"]
           dotnet new console -o "SelectorService"
           cd "SelectorService"
           dotnet add package Microsoft.Azure.ServiceBus
+          dotnet add package Microsoft.Extensions.Configuration.Json
           echo "FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build 
 WORKDIR /src
 COPY SelectorService.csproj .
@@ -167,7 +168,17 @@ echo "-----------------------------------"
 echo "Docker compose creado correctamente"
 echo "-----------------------------------"
 
+cd ..
 
+cd infra
+
+terraform init
+
+terraform plan -out plan.out
+
+terraform apply plan.out
+
+cd ..
 
 echo "-----------------------------------"
 echo "Grupo de recursos y Service Bus creado correctamente"

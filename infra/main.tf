@@ -15,7 +15,7 @@ resource "azurerm_resource_group" "rg" {
   }
 }
 
-resource "azurecaf_name" "rg_name" {
+resource "azurecaf_name" "sb_name" {
   name          = "amines"
   resource_type = "azurerm_servicebus_namespace"
   prefixes      = ["dev"]
@@ -25,7 +25,7 @@ resource "azurecaf_name" "rg_name" {
 }
 
 resource "azurerm_servicebus_namespace" "sb_namespace" {
-  name                = azurecaf_name.rg_name.result
+  name                = azurecaf_name.sb_name.result
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   sku                 = "Standard"
@@ -35,7 +35,7 @@ resource "azurerm_servicebus_namespace" "sb_namespace" {
 }
 
 resource "azurecaf_name" "queue_name" {
-  name          = "amines"
+  name          = "testing"
   resource_type = "azurerm_servicebus_queue"
   prefixes      = ["dev"]
   suffixes      = ["y", "z"]
