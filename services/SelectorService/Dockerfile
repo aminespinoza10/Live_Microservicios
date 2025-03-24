@@ -10,8 +10,10 @@ RUN dotnet build "SelectorService.csproj" -c Release -o /app/build
 
 RUN dotnet publish -c release -o /app
 
+COPY appsettings.json /app/appsettings.json
+
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
-WORKDIR /
+WORKDIR /app
 
 COPY --from=build /app .
 
